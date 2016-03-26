@@ -4,12 +4,12 @@
 	<persistence-unit name="fabricaweb2" transaction-type="RESOURCE_LOCAL">
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
 		<properties>
-			<property nome="javax.persistence.jdbc.url"
+			<property name="javax.persistence.jdbc.url"
 				value="jdbc:postgresql://localhost:5432/fabricaweb2db" />
-			<property nome="javax.persistence.jdbc.password" value="postgres" />
-			<property nome="javax.persistence.jdbc.driver" value="org.postgresql.Driver" />
-			<property nome="javax.persistence.jdbc.user" value="postgres" />
-			<property nome="hibernate.hbm2ddl.auto" value="update" />
+			<property name="javax.persistence.jdbc.password" value="postgres" />
+			<property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" />
+			<property name="javax.persistence.jdbc.user" value="postgres" />
+			<property name="hibernate.hbm2ddl.auto" value="update" />
 		</properties>
 	</persistence-unit>
 </persistence>
