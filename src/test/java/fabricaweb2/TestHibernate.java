@@ -5,6 +5,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
+import br.com.fabricadeprogramador.dao.UsuarioDAO;
 import br.com.fabricadeprogramador.entidade.Usuario;
 
 public class TestHibernate {
@@ -17,15 +18,15 @@ public class TestHibernate {
 		EntityManager em = emf.createEntityManager();
 		
 		Usuario usu = new Usuario();
-		usu.setNome("Jao");
-		usu.setLogin("jj");
-		usu.setSenha("123");
+		usu.setNome("Joabe");
+		usu.setLogin("jbk");
+		usu.setSenha("12345");
 		
-		em.getTransaction().begin();
 		
-		em.persist(usu);
+		UsuarioDAO usuarioDAO = new UsuarioDAO(em);
 		
-		em.getTransaction().commit();
+		usuarioDAO.salvar(usu);
+			
 
 	}
 

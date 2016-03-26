@@ -84,5 +84,11 @@ public class Usuario implements Serializable {
 		} else if (!senha.equals(other.senha))
 			return false;
 		return true;
+	}
+	@Override
+	public String toString() {
+		return "Usuario [id=" + id + ", nome=" + nome + ", login=" + login + ", senha=" + senha + "]";
 	}	
+	
+	
 }
