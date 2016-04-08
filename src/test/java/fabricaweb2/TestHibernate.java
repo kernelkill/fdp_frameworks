@@ -1,5 +1,7 @@
 package fabricaweb2;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -25,9 +27,20 @@ public class TestHibernate {
 		
 		UsuarioDAO usuarioDAO = new UsuarioDAO(em);
 		
-		usuarioDAO.salvar(usu);
-			
-
+//		Usuario usuExcluir = usuarioDAO.buscarPorId(2);
+//		usuarioDAO.excluir(usuExcluir);
+		
+//		List<Usuario> usuListar = usuarioDAO.buscarTodos();
+//		for (Usuario usuario : usuListar) {
+//			System.out.println(usuario.toString());
+//		}
+		
+		Usuario usuModificar = usuarioDAO.buscarPorId(1);
+		usuModificar.setLogin("kachorroski");
+		usuModificar.setNome("Joabe");
+		usuarioDAO.salvar(usuModificar);	
+		
+//		System.out.println(usuExcluir + "foi excluido com sucesso!");
 	}
 
 }

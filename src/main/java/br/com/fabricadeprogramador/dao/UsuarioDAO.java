@@ -11,18 +11,9 @@ public class UsuarioDAO {
 
 	EntityManager em;	
 	public UsuarioDAO(EntityManager em) {
-		this.em =em;
+		this.em = em;
 	}
-	
-	//Insert
-	public void cadastrar(Usuario usuario){
-				
-	}
-	//Update
-	public void  alterar(Usuario usuario){
-		
-	}
-	
+
 	//Insert ou Update
 	public void salvar(Usuario usuario){
 		em.getTransaction().begin();
