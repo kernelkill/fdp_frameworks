@@ -76,6 +76,27 @@
 			<version>1.7.7</version>
 		</dependency>
 
+		<!-- Framework Spring Modulo Injecao de Dependencias -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>4.1.0.RELEASE</version>
+		</dependency>
+
+		<!-- Framework Spring Modulo Integracao JPA Hibernate -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-orm</artifactId>
+			<version>4.1.0.RELEASE</version>
+		</dependency>
+
+		<!-- Framework Spring Modulo Controle de Transacoes -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-tx</artifactId>
+			<version>4.1.0.RELEASE</version>
+		</dependency>
+
 
 	</dependencies>
 
