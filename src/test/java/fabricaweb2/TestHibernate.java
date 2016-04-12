@@ -7,25 +7,37 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
 import br.com.fabricadeprogramador.dao.UsuarioDAO;
 import br.com.fabricadeprogramador.entidade.Usuario;
 
 public class TestHibernate {
 
 	public static void main(String[] args) {
-		//Fabrica de EntityManager
-		EntityManagerFactory emf = Persistence.createEntityManagerFactory("fabricaweb2");
+//		//Fabrica de EntityManager
+//		EntityManagerFactory emf = Persistence.createEntityManagerFactory("fabricaweb2");
+//		
+//		//Gerenciador de Entidade
+//		EntityManager em = emf.createEntityManager();
 		
-		//Gerenciador de Entidade
+		ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("file:src/main/resources/META-INF/springbeans.xml");
+		EntityManagerFactory emf =   (EntityManagerFactory) ctx.getBean("entityManagerFactory");
+		
 		EntityManager em = emf.createEntityManager();
 		
+		
+		
 		Usuario usu = new Usuario();
-		usu.setNome("Joabe");
-		usu.setLogin("jbk");
-		usu.setSenha("12345");
+		usu.setNome("Maria da Silva");
+		usu.setLogin("marisil");
+		usu.setSenha("789456");
 		
 		
 		UsuarioDAO usuarioDAO = new UsuarioDAO(em);
+		
+		usuarioDAO.salvar(usu);
+		
 		
 //		Usuario usuExcluir = usuarioDAO.buscarPorId(2);
 //		usuarioDAO.excluir(usuExcluir);
@@ -35,10 +47,10 @@ public class TestHibernate {
 //			System.out.println(usuario.toString());
 //		}
 		
-		Usuario usuModificar = usuarioDAO.buscarPorId(1);
-		usuModificar.setLogin("kachorroski");
-		usuModificar.setNome("Joabe");
-		usuarioDAO.salvar(usuModificar);	
+//		Usuario usuModificar = usuarioDAO.buscarPorId(1);
+//		usuModificar.setLogin("kachorroski");
+//		usuModificar.setNome("Joabe");
+//		usuarioDAO.salvar(usuModificar);	
 		
 //		System.out.println(usuExcluir + "foi excluido com sucesso!");
 	}

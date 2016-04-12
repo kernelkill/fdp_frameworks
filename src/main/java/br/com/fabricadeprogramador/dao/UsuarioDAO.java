@@ -5,10 +5,14 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
+import org.springframework.stereotype.Repository;
+
 import br.com.fabricadeprogramador.entidade.Usuario;
+
 
 public class UsuarioDAO {
 
+	
 	EntityManager em;	
 	public UsuarioDAO(EntityManager em) {
 		this.em = em;
