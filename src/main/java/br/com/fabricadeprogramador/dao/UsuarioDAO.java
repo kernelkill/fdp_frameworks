@@ -19,10 +19,11 @@ public class UsuarioDAO {
 	}
 
 	//Insert ou Update
-	public void salvar(Usuario usuario){
+	public Usuario salvar(Usuario usuario){
 		em.getTransaction().begin();
-		em.merge(usuario);
+		Usuario u =  em.merge(usuario);
 		em.getTransaction().commit();
+		return u;
 	}
 	
 	public void excluir(Usuario usuario){

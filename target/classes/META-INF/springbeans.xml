@@ -27,4 +27,5 @@
 		<property name="url"
 			value="jdbc:postgresql://localhost:5432/fabricaweb2db" />
 	</bean>
+	
 </beans>
