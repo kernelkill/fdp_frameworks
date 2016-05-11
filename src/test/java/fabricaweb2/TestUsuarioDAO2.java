@@ -71,6 +71,9 @@ public class TestUsuarioDAO2 {
 		//Salvar Usuario no teste
 		Usuario usuSalvo =  usuarioDAO.salvar(usu);
 		
+		//Buscar por ID
+		//Usuario usuExc =  usuarioDAO.buscarPorId(usuSalvo.getId());
+		
 		//Excluir Usuario
 		usuarioDAO.excluir(usuSalvo);
 		

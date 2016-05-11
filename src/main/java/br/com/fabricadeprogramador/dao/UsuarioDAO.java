@@ -35,8 +35,14 @@ public class UsuarioDAO {
 	
 	@Transactional
 	public void excluir(Usuario usuario){
-		em.remove(usuario);
+		try{
+			em.remove(usuario);
+		}catch(IllegalArgumentException e){
+			throw new DAOException(e);
+		}
+		
 	}
+	
 	
 	public  Usuario buscarPorId(int id){
 		return em.find(Usuario.class, id);
