@@ -7,37 +7,28 @@ import javax.persistence.EntityManagerFactory;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.test.context.transaction.TransactionConfiguration;
+import org.springframework.transaction.annotation.Transactional;
 
 import br.com.fabricadeprogramador.dao.UsuarioDAO;
 import br.com.fabricadeprogramador.entidade.Usuario;
 import junit.framework.Assert;
 
 
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration(locations="file:src/main/resources/META-INF/springbeans.xml")
+@TransactionConfiguration(transactionManager="tm")
 
-public class TestUsuarioDAO {
+public class TestUsuarioDAO2 {
 	
-	EntityManager em;
-	ClassPathXmlApplicationContext ctx;
-	UsuarioDAO usuarioDAO;
-	Usuario usuario;
+	@Autowired
+	UsuarioDAO usuarioDAO; 
 	
-	@Before
-	public void init(){
-		//Contexto so Spring
-		ctx = new ClassPathXmlApplicationContext("file:src/main/resources/META-INF/springbeans.xml");
-		EntityManagerFactory emf =   (EntityManagerFactory) ctx.getBean("entityManagerFactory");
-		em = emf.createEntityManager();
-		
-		//Criando um UsuarioDAO
-		usuarioDAO = new UsuarioDAO(em);
-		usuario = new Usuario();
-	}
-	
-	@Before
-	public void finaliza(){
-		ctx.close();
-	}
 	
 	@Test
 	public void testSalvar(){

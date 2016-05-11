@@ -35,12 +35,11 @@ public class TestHibernate {
 		
 		
 		UsuarioDAO usuarioDAO = new UsuarioDAO(em);
+//		usuarioDAO.salvar(usu);
 		
-		usuarioDAO.salvar(usu);
 		
-		
-//		Usuario usuExcluir = usuarioDAO.buscarPorId(2);
-//		usuarioDAO.excluir(usuExcluir);
+		Usuario usuExcluir = usuarioDAO.buscarPorId(20);
+		usuarioDAO.excluir(usuExcluir);
 		
 //		List<Usuario> usuListar = usuarioDAO.buscarTodos();
 //		for (Usuario usuario : usuListar) {
@@ -52,7 +51,7 @@ public class TestHibernate {
 //		usuModificar.setNome("Joabe");
 //		usuarioDAO.salvar(usuModificar);	
 		
-//		System.out.println(usuExcluir + "foi excluido com sucesso!");
+		System.out.println(usuExcluir + "foi excluido com sucesso!");
 	}
 
 }
