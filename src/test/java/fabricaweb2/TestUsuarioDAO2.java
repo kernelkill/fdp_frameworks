@@ -15,14 +15,16 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.transaction.TransactionConfiguration;
 import org.springframework.transaction.annotation.Transactional;
 
+import br.com.fabricadeprogramador.dao.DAOException;
 import br.com.fabricadeprogramador.dao.UsuarioDAO;
+import br.com.fabricadeprogramador.dao.UsuarioDAOJPA;
 import br.com.fabricadeprogramador.entidade.Usuario;
 import junit.framework.Assert;
 
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations="file:src/main/resources/META-INF/springbeans.xml")
-@TransactionConfiguration(transactionManager="tm")
+@TransactionConfiguration
 
 public class TestUsuarioDAO2 {
 	
@@ -61,7 +63,8 @@ public class TestUsuarioDAO2 {
 	}
 	
 	@Test
-	public void testeExcluir(){
+	@Transactional
+	public void testeExcluir() throws DAOException{
 		//criar um novo usuario
 		Usuario usu = new Usuario();
 		usu.setNome("Joabe kachorroski");

@@ -4,8 +4,8 @@ public class DAOException extends Exception {
 
 	
 	//Construtor recebendo a causa
-	public DAOException(IllegalArgumentException e) {
-		super(e);
+	public DAOException(String msg, Exception causa) {
+		super(msg,causa);
+		
 	}
-
 }

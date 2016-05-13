@@ -9,6 +9,7 @@
 
 
 	<tx:annotation-driven/>
+	<context:annotation-config/>
 	
 	<context:component-scan base-package="br.com.fabricadeprogramador.dao"/>
 	
