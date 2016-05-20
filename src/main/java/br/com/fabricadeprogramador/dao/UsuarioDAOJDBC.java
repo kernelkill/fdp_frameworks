@@ -2,8 +2,11 @@ package br.com.fabricadeprogramador.dao;
 
 import java.util.List;
 
+import org.springframework.stereotype.Repository;
+
 import br.com.fabricadeprogramador.entidade.Usuario;
 
+@Repository
 public class UsuarioDAOJDBC implements UsuarioDAO{
 
 	@Override

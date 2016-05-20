@@ -7,7 +7,13 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.test.context.transaction.TransactionConfiguration;
+import org.springframework.transaction.annotation.Transactional;
 
 import br.com.fabricadeprogramador.dao.UsuarioDAO;
 import br.com.fabricadeprogramador.entidade.Usuario;
@@ -15,18 +21,15 @@ import br.com.fabricadeprogramador.entidade.Usuario;
 public class TestHibernate {
 
 	public static void main(String[] args) {
-//		//Fabrica de EntityManager
+		//Fabrica de EntityManager
 //		EntityManagerFactory emf = Persistence.createEntityManagerFactory("fabricaweb2");
 //		
-//		//Gerenciador de Entidade
+		//Gerenciador de Entidade
+//		EntityManager em = emf.createEntityManager();		
+//		ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("file:src/main/resources/META-INF/springbeans.xml");
+//		EntityManagerFactory emf =   (EntityManagerFactory) ctx.getBean("entityManagerFactory");
+//		
 //		EntityManager em = emf.createEntityManager();
-		
-		ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("file:src/main/resources/META-INF/springbeans.xml");
-		EntityManagerFactory emf =   (EntityManagerFactory) ctx.getBean("entityManagerFactory");
-		
-		EntityManager em = emf.createEntityManager();
-		
-		
 		
 		Usuario usu = new Usuario();
 		usu.setNome("Maria da Silva");

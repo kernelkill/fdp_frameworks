@@ -9,6 +9,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
@@ -25,10 +26,10 @@ import junit.framework.Assert;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations="file:src/main/resources/META-INF/springbeans.xml")
 @TransactionConfiguration
-
 public class TestUsuarioDAO2 {
 	
 	@Autowired
+	@Qualifier("usuarioDAOJPA")
 	UsuarioDAO usuarioDAO; 
 	
 	
@@ -49,7 +50,7 @@ public class TestUsuarioDAO2 {
 	public void testBuscaPorID(){
 		
 		Usuario usu = new Usuario();
-		usu.setNome("Marcos");
+		usu.setNome("Marcos da Silva");
 		usu.setLogin("marcostest");
 		usu.setSenha("testsenha");
 		
@@ -67,9 +68,9 @@ public class TestUsuarioDAO2 {
 	public void testeExcluir() throws DAOException{
 		//criar um novo usuario
 		Usuario usu = new Usuario();
-		usu.setNome("Joabe kachorroski");
-		usu.setLogin("kachorroski");
-		usu.setSenha("122222");
+		usu.setNome("Juliano Pereira");
+		usu.setLogin("juper");
+		usu.setSenha("987654");
 		
 		//Salvar Usuario no teste
 		Usuario usuSalvo =  usuarioDAO.salvar(usu);
@@ -92,7 +93,7 @@ public class TestUsuarioDAO2 {
 		
 		//criar um novo usuario
 		Usuario usu = new Usuario();
-		usu.setNome("Joabe kachorroski");
+		usu.setNome("Joabe Kachorroski");
 		usu.setLogin("kachorroski");
 		usu.setSenha("122222");
 		

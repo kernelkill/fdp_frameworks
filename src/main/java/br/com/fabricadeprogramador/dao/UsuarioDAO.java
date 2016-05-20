@@ -4,8 +4,6 @@ import java.util.List;
 import javax.persistence.Query;
 import br.com.fabricadeprogramador.entidade.Usuario;
 
-
-
 public interface UsuarioDAO {
 	
 	public Usuario salvar(Usuario usuario);
